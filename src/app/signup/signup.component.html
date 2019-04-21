@@ -1,0 +1,7 @@
+<form name="form" #f="ngForm" (ngSubmit)="saveUser()">
+
+  username <input type="text" name="username" [(ngModel)]="model.username" />
+  email <input type="text" name="email" [(ngModel)]="model.email" />
+  password <input type="text"  name="password" [(ngModel)]="model.password" />
+  <input type="submit" name="" value="submit">
+</form>

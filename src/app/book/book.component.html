@@ -1,0 +1,41 @@
+
+<div class="row">
+  <div class="col-md-2"></div>
+  <div class="col-md-4 bookcontainer">
+    <p>Total No Of books here: {{length}}</p>
+  <li *ngFor="let book of book" class="list-item">
+    <div class="row">
+    <p>{{book.name}}</p>
+    <form name="form" #f="ngForm" (ngSubmit)="deleteBook(book)">
+     <input type="submit"  value=" remove " class="btn btn-danger remove">
+    </form>
+
+    <form name="form" #f="ngForm" (ngSubmit)="getDetails(book)">
+     <input type="submit"  value=" Know More " class="btn btn-success know">
+    </form>
+    </div>
+  </li>
+  </div>
+  <div class="col-md-6 forms">
+
+<h5>Add New Book </h5>
+<form name="form" #f="ngForm" (ngSubmit)="saveBook()" >
+  <div class="form-group">
+ Name  <input type="text" name="name" [(ngModel)]="model.name">
+</div>
+<div class="form-group">
+Edition  <input type="text" name="edition" [(ngModel)]="model.edition">
+</div>
+<div class="form-group">
+Author <input type="text" name="author" [(ngModel)]="model.author">
+</div>
+<div class="form-group">
+Description  <input type="text" name="description" [(ngModel)]="model.description">
+</div>
+<div class="form-group">
+<input type="submit" value="submit" class="btn btn-primary">
+</div>
+
+</form>
+</div>
+</div>
